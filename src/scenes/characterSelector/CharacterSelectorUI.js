@@ -1,5 +1,6 @@
 import cache from "../../engine/basic/Cache"
 import scene from "../../engine/basic/Scene"
+import fadeHandler from "../../engine/ui/FadeHandler"
 
 class CharacterSelectorUI {
     constructor() {
@@ -12,7 +13,10 @@ class CharacterSelectorUI {
         this.showPictures(list, theScene)
         document.body.appendChild(this.node)
         this.buildContainer()
-
+        this.node.querySelector('ul').firstChild.firstChild.click()
+        setTimeout(() => {
+            fadeHandler.fadeFromBlack()
+        }, 100);
     }
     showTitle() {
         let title = document.createElement('div')

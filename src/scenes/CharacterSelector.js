@@ -27,11 +27,11 @@ class CharacterSelector extends MasterScene {
     }
 
     open(that) {
+
         machine.addCallback(this.callback);
         machine.on();
         // keyListener.start()
         resize.open(renderer)
-        characterSelectorUI.start(characterSelectorList, this)
         scene.add(directionalLight)
         scene.add(ambientLight)
         scene.add(hemiLight);
@@ -47,9 +47,9 @@ class CharacterSelector extends MasterScene {
             this.characterController = new CharacterController(settings2, directionNoneController)
             this.characterController.setMesh(mesh)
             this.characterController.start()
-
         });
         camera.rotation.y = -15 * Math.PI / 180
+        characterSelectorUI.start(characterSelectorList, this)
     }
 
     close() {

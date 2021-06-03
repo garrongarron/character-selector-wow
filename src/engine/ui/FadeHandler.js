@@ -13,7 +13,7 @@ class FadeHandler {
         let promise = new Promise((res, rej) => {
             setTimeout(() => {
                 res(true)
-            }, time || 3000);
+            }, time || 1000);
         })
         return promise
     }
@@ -25,7 +25,7 @@ class FadeHandler {
                 // this.fadeNode.classList.remove('fade-from-black')
                 this.stop()
                 res(true)
-            }, time || 3000);
+            }, time || 1000);
         })
         return promise
     }

@@ -1,5 +1,5 @@
 import MasterScene from "../engine/scenes/MasterScene";
-import image from '../../src/images/Portada.png'
+import image from '../../src/images/characters/WoWlogo.png'
 import sceneList from "./SceneList";
 import cache from '../engine/basic/Cache'
 import sounds from "../audio/Audios";
@@ -14,19 +14,19 @@ class Landing extends MasterScene {
         this.landing = document.createElement('div')
         this.landing.classList.add('landing')
         this.landing.style.backgroundImage = `url(${image})`
-        this.btn = document.createElement('div')
-        this.btn.innerText = 'Play Now'
-        this.btn.classList.add('play-now')
-        this.landing.appendChild(this.btn)
-        this.btn.addEventListener('click', () => {
-            fadeHandler.fadeToBlack().then(a => {
-                sceneHandlerObj.get().goTo(sceneList.demo)
-                setTimeout(() => {
-                    fadeHandler.fadeFromBlack()
-                }, 100);
-            })
+            // this.btn = document.createElement('div')
+            // this.btn.innerText = 'Play Now'
+            // this.btn.classList.add('play-now')
+            // this.landing.appendChild(this.btn)
+            // this.btn.addEventListener('click', () => {
+            //     fadeHandler.fadeToBlack().then(a => {
+            //         sceneHandlerObj.get().goTo(sceneList.demo)
+            //         setTimeout(() => {
+            //             fadeHandler.fadeFromBlack()
+            //         }, 100);
+            //     })
 
-        })
+        // })
         this.samuGames = document.createElement('div')
         this.samuGames.innerHTML = "Samu Games"
         this.samuGames.classList.add('samu-games')
@@ -38,6 +38,11 @@ class Landing extends MasterScene {
                 sounds.setRelativeVolume('intro', .1)
                 sounds.play('intro')
                 fadeHandler.fadeFromBlack()
+                setTimeout(() => {
+                    fadeHandler.fadeToBlack().then(a => {
+                        sceneHandlerObj.get().goTo(sceneList.characterselector)
+                    })
+                }, 2000);
             })
         })
 

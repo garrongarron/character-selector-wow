@@ -14,6 +14,7 @@
     box-sizing: border-box;
     list-style: none;
     overflow: hidden;
+    user-select: none;
 }
 
 .hide {
@@ -24,11 +25,12 @@
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: red;
+    background-color: black;
     top: 0;
     // background-image: url('src/images/Portada.png');
-    background-size: contain;
-    background-repeat: round;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .samu-games {
@@ -117,7 +119,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0);
-    transition: all 3s;
+    transition: all 1s;
     position: fixed;
     top: 0;
     left: 0;
@@ -126,7 +128,7 @@
 
 .fade-to-black {
     background-color: rgba(0, 0, 0, 1);
-    transition: all 3s;
+    transition: all 1s;
 }
 
 @import './scenes/characterSelector/characterSelector.scss';
