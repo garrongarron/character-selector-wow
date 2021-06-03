@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'gotic';
+    src: url("./fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'cursi';
+    src: url("./fonts/Kaushan_Script/KaushanScript-Regular.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.landing {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: red;
+    top: 0;
+    // background-image: url('src/images/Portada.png');
+    background-size: contain;
+    background-repeat: round;
+}
+
+.samu-games {
+    position: absolute;
+    background-color: black;
+    line-height: 100vh;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    top: 0;
+    cursor: pointer;
+    font-family: 'gotic';
+    font-size: 5em;
+}
+
+.play-now {
+    position: absolute;
+    font-size: 5em;
+    bottom: 1em;
+    right: 2em;
+    background-color: black;
+    border-radius: 30px;
+    padding: 25px;
+    font-family: sans-serif;
+    color: white;
+    border: 15px solid yellow;
+    user-select: none;
+    cursor: pointer;
+    font-family: 'gotic';
+    padding-top: .5em;
+}
+
+
+/* Context menu */
+
+.display-context-menu {
+    background-color: gray;
+    position: fixed;
+    padding: .1em;
+    cursor: pointer;
+}
+
+.display-context-menu>div {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    padding: .2em .5em;
+}
+
+.display-context-menu>div:hover {
+    color: #ccc;
+}
+
+
+/* sound controlls*/
+
+.sound-control {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1em;
+    color: gray;
+    padding: 1em;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.sound-down:hover,
+.sound-up:hover {
+    color: red;
+}
+
+.message-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-family: 'gotic';
+    font-size: 5em;
+    color: yellow;
+    text-shadow: 2px 2px 4px black;
+    padding: 1em;
+}
+
+.fade-node {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.fade-to-black {
+    background-color: rgba(0, 0, 0, 1);
+    transition: all 3s;
+}
+
+@import './scenes/characterSelector/characterSelector.scss';
