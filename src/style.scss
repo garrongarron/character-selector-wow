@@ -131,4 +131,319 @@
     transition: all 1s;
 }
 
+.glove {
+    /* The second value here is a fallback. */
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    /* You may need coordinates to adjust the pointer
+       for example, the custom cursor is circular and you want
+       the middle to be where you click */
+    // cursor: url(target.svg) 15 15, move;
+}
+
 @import './scenes/characterSelector/characterSelector.scss';
+.backpack {
+    background: #333;
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: .1em;
+        padding: .1em;
+        li {
+            width: 2em;
+            height: 2em;
+            border: 1px solid gray;
+        }
+    }
+}
+
+.quest {
+    background: #333;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    width: 10em;
+    color: white;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    .page {
+        text-align: left;
+        height: 15em;
+        font-size: .75em;
+        font-style: italic;
+        overflow-y: scroll;
+        padding: .5em;
+        cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    }
+    .page::-webkit-scrollbar {
+        cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+        background-color: #ccc;
+    }
+    .page::-webkit-scrollbar-thumb {
+        background-color: green;
+    }
+    .footer {
+        width: 100;
+        background-color: rgb(65, 44, 14);
+        text-align: center;
+        padding: .3em;
+        display: flex;
+        justify-content: space-between;
+        button {
+            border-radius: 5px;
+            background-color: brown;
+            border: 1px solid black;
+            padding: 0 .2em;
+            color: yellow;
+            cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+        }
+        button:hover {
+            color: yellow;
+            border: 1px solid white;
+        }
+    }
+}
+
+.loot {
+    background: #333;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    width: 10em;
+    color: white;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    ul {
+        background-color: #333;
+        padding: .1em .5em;
+        li {
+            padding: .2em;
+            border: 1px solid #666;
+            border-radius: 5px;
+            color: white;
+            margin-top: .1em;
+            margin-bottom: .1em;
+        }
+    }
+}
+
+.hotkey {
+    background: #333;
+    position: fixed;
+    bottom: 0em;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    color: white;
+    ul {
+        display: flex;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: .1em;
+        padding: .1em;
+        li {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid gray;
+            text-align: right;
+            font-size: .5em;
+            padding: .2rem;
+        }
+    }
+    .experience {
+        width: 100%;
+        background-color: purple;
+        height: .25em;
+    }
+}
+
+.quest-resume {
+    background: #333;
+    position: fixed;
+    top: 1.5em;
+    right: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    width: 10em;
+    color: white;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    ul {
+        background-color: #333;
+        padding: .1em .5em;
+        li {
+            padding: .2em;
+            border: 1px solid #666;
+            border-radius: 5px;
+            color: white;
+            margin-top: .1em;
+            margin-bottom: .1em;
+        }
+    }
+}
+
+.chat {
+    background: #333;
+    position: fixed;
+    bottom: 1.5em;
+    left: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    width: 10em;
+    color: white;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    ul {
+        background-color: #333;
+        padding: .1em .5em;
+        li {
+            padding: .2em;
+            border: 1px solid #666;
+            border-radius: 5px;
+            color: white;
+            margin-top: .1em;
+            margin-bottom: .1em;
+        }
+    }
+}
+
+.wear {
+    background: #333;
+    position: fixed;
+    top: 1.5em;
+    left: 1.5em;
+    cursor: url('/src/images/cursor/cursor-wow.png'), auto;
+    font-family: sans-serif;
+    width: fit-content;
+    color: white;
+    &>div {
+        width: 100%;
+        border: 1px solid gray;
+        text-align: center;
+        color: white;
+        display: flex;
+        div {
+            width: 100%;
+        }
+        .close {
+            background-color: red;
+            color: white;
+            width: 1em;
+        }
+    }
+    section {
+        display: flex;
+        .right {
+            border-left: 1px solid gray;
+            margin-left: .1em;
+            ul {
+                padding: .1em;
+                li {
+                    border: 1px solid gray;
+                    width: 100%;
+                    height: 1.5em;
+                    margin-top: .1em;
+                    margin-bottom: .1em;
+                    line-height: 1.5em;
+                    padding-left: .2em;
+                    padding-right: .2em;
+                }
+            }
+        }
+        .left {
+            display: flex;
+            ul {
+                padding: .1em;
+                li {
+                    border: 1px solid gray;
+                    width: 1.5em;
+                    height: 1.5em;
+                    margin: .1em 0em;
+                }
+            }
+            .image {
+                width: 100px;
+                height: 100px;
+                background-color: purple;
+            }
+        }
+        .right {
+            display: flex;
+        }
+    }
+}

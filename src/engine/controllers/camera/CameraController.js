@@ -8,7 +8,7 @@ import { MathUtils } from 'three'
 
 class CameraController {
     constructor() {
-        this.interpolation = .5
+        this.interpolation = 1
         this.rotation = 0
         this.gap = 10
         this.rotationWithGap = 0
@@ -27,8 +27,7 @@ class CameraController {
                     Math.PI / 180
                 this.rotationWithGap = -(angleRotation + this.gap) *
                     Math.PI / 180
-                let rotationWithGap2 = -(angleRotation + this.gap / 2) *
-                    Math.PI / 180
+
 
                 let x = this.target.position.x -
                     Math.sin(this.rotation) *
@@ -58,14 +57,16 @@ class CameraController {
                         this.target.position.y, 
                         this.target.position.z)
                     */
-                    // displacementCamController.run(rotationWithGap2)
+                    // displacementCamController.run(rotationWithGap)
                 if (this.afterProcessCallback != null) {
                     this.afterProcessCallback(this)
                 }
             }
         }
     }
-
+    setRadio(radio) {
+        this.radio = radio
+    }
     lookAtTarget() {
         let opositeCamPosition = {
             position: {

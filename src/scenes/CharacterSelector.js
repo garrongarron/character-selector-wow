@@ -24,10 +24,11 @@ class CharacterSelector extends MasterScene {
         this.callback = () => {
             renderer.render(scene, camera);
         }
+        this.scenehandler = null
     }
 
-    open(that) {
-
+    open(scenehandler) {
+        this.scenehandler = scenehandler
         machine.addCallback(this.callback);
         machine.on();
         // keyListener.start()
@@ -38,15 +39,15 @@ class CharacterSelector extends MasterScene {
         scene.background = skyTexture;
         maw.getObject().then(mesh => {
             this.mesh = mesh
-            this.characterController = new CharacterController(settings, directionNoneController)
-            this.characterController.setMesh(mesh)
-            this.characterController.start()
+            this.characterController1 = new CharacterController(settings, directionNoneController)
+            this.characterController1.setMesh(mesh)
+            this.characterController1.start()
         });
         erika.getObject().then(mesh => {
             this.mesh = mesh
-            this.characterController = new CharacterController(settings2, directionNoneController)
-            this.characterController.setMesh(mesh)
-            this.characterController.start()
+            this.characterController2 = new CharacterController(settings2, directionNoneController)
+            this.characterController2.setMesh(mesh)
+            this.characterController2.start()
         });
         camera.rotation.y = -15 * Math.PI / 180
         characterSelectorUI.start(characterSelectorList, this)
@@ -60,6 +61,8 @@ class CharacterSelector extends MasterScene {
         scene.remove(ambientLight)
         scene.remove(hemiLight)
         scene.remove(cube)
+        this.characterController1.stop()
+        this.characterController2.stop()
     }
 }
 

@@ -1,6 +1,7 @@
 import cache from "../../engine/basic/Cache"
 import scene from "../../engine/basic/Scene"
 import fadeHandler from "../../engine/ui/FadeHandler"
+import sceneList from "../SceneList"
 
 class CharacterSelectorUI {
     constructor() {
@@ -9,14 +10,28 @@ class CharacterSelectorUI {
     }
     start(list, theScene) {
         this.node.innerHTML = ''
+        this.theScene = theScene
         this.showTitle()
         this.showPictures(list, theScene)
         document.body.appendChild(this.node)
         this.buildContainer()
         this.node.querySelector('ul').firstChild.firstChild.click()
+        this.setButton()
         setTimeout(() => {
             fadeHandler.fadeFromBlack()
         }, 100);
+    }
+    setButton() {
+        let btnContainer = document.createElement('div')
+        btnContainer.classList.add('btnContainer')
+        let btn = document.createElement('button')
+        btn.innerText = 'Continue'
+        btn.addEventListener('click', () => {
+            this.theScene.scenehandler.goTo(sceneList.quest)
+            this.stop()
+        })
+        btnContainer.appendChild(btn)
+        this.node.appendChild(btnContainer)
     }
     showTitle() {
         let title = document.createElement('div')

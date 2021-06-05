@@ -14,6 +14,7 @@ class CharacterController {
         this.flag = false
         this.list = null
         this.callback = () => {
+            console.log(this.direction);
             this.list[this.mode].run(this.direction, this.mode)
         }
 
